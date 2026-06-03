@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>算力设备进口与保税区建设政策分析</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+            min-height: 100vh;
+            color: #2c3e50;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        header {
+            text-align: center; margin-bottom: 40px; padding: 30px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            border-radius: 16px; color: white;
+            box-shadow: 0 10px 40px rgba(30, 60, 114, 0.3);
+        }
+        header h1 { font-size: 2rem; font-weight: 600; margin-bottom: 10px; letter-spacing: 1px; }
+        header p { opacity: 0.9; font-size: 1rem; }
+        .nav-tabs {
+            display: flex; justify-content: center; gap: 10px;
+            margin-bottom: 30px; flex-wrap: wrap;
+        }
+        .nav-tab {
+            padding: 12px 22px; border: none; border-radius: 50px;
+            background: white; color: #5a6c7d; font-size: 0.95rem;
+            font-weight: 500; cursor: pointer; transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .nav-tab:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); color: #2a5298; }
+        .nav-tab.active {
+            background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+            color: white; box-shadow: 0 6px 20px rgba(42, 82, 152, 0.4);
+        }
+        .nav-tab .badge {
+            display: inline-block; margin-left: 5px;
+            padding: 2px 7px; border-radius: 10px;
+            font-size: 0.7rem; background: rgba(255,255,255,0.25);
+        }
+        .content-area {
+            background: white; border-radius: 16px; padding: 35px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+            animation: fadeIn 0.4s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .region-header {
+            display: flex; align-items: center; margin-bottom: 25px;
+            padding-bottom: 18px; border-bottom: 2px solid #eef2f7;
+        }
+        .region-icon {
+            width: 52px; height: 52px; border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem; margin-right: 14px; flex-shrink: 0;
+        }
+        .region-title h2 { font-size: 1.5rem; color: #1e3c72; margin-bottom: 3px; }
+        .region-title .subtitle { color: #7f8c8d; font-size: 0.9rem; }
+        .tag-container { margin-bottom: 20px; display: flex; flex-wrap: wrap; gap: 6px; }
+        .tag {
+            padding: 5px 12px; border-radius: 16px;
+            font-size: 0.8rem; font-weight: 500;
+        }
+        .tag.highlight { background: #fff3e0; color: #e65100; }
+        .tag.info { background: #e3f2fd; color: #1565c0; }
+        .tag.success { background: #e8f5e9; color: #2e7d32; }
+        .tag.warning { background: #fce4ec; color: #c62828; }
+        h3.section-title {
+            font-size: 1.15rem; color: #1e3c72;
+            margin: 28px 0 14px 0;
+            padding-left: 12px;
+            border-left: 3px solid #2a5298;
+        }
+        table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 0.9rem; }
+        thead th {
+            background: #f8fafc; padding: 12px 14px; text-align: left;
+            font-weight: 600; color: #1e3c72;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        tbody td {
+            padding: 12px 14px; border-bottom: 1px solid #f1f5f9;
+            vertical-align: top; line-height: 1.55;
+        }
+        tbody tr:hover { background: #fafbfc; }
+        .level-cell { text-align: center; white-space: nowrap; }
+        .level {
+            display: inline-block; padding: 3px 10px;
+            border-radius: 5px; font-size: 0.78rem; font-weight: 600;
+        }
+        .level-high { background: #fee2e2; color: #dc2626; }
+        .level-medium { background: #fef3c7; color: #d97706; }
+        .level-highest { background: #dbeafe; color: #1d4ed8; }
+        .level-low { background: #f3f4f6; color: #6b7280; }
+
+        .gpu-box {
+            margin-top: 20px;
+            padding: 20px;
+            background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+            border-radius: 12px;
+            border-left: 4px solid #ff8f00;
+        }
+        .gpu-box h4 {
+            color: #e65100;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .gpu-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .gpu-box li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+            color: #5d4037;
+            font-size: 0.9rem;
+        }
+        .gpu-box li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #ff8f00;
+            font-weight: bold;
+        }
+        .gpu-box .note {
+            margin-top: 10px;
+            padding: 10px;
+            background: rgba(255,255,255,0.6);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: #6d4c41;
+        }
+
+        .case-box {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f0f9ff;
+            border-radius: 12px;
+            border-left: 4px solid #0288d1;
+        }
+        .case-box h4 {
+            color: #01579b;
+            font-size: 1rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .case-list {
+            list-style: none;
+            padding: 0;
+        }
+        .case-list li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #b3e5fc;
+        }
+        .case-list li:last-child {
+            border-bottom: none;
+        }
+        .case-list a {
+            color: #0277bd;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            word-break: break-all;
+        }
+        .case-list a:hover { text-decoration: underline; }
+        .case-desc {
+            display: block;
+            color: #546e7a;
+            font-size: 0.82rem;
+            margin-top: 3px;
+        }
+
+        .policy-links {
+            margin-top: 24px;
+            padding: 20px;
+            background: #fafbfc;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+        .policy-links h3 {
+            color: #1e3c72;
+            margin-bottom: 14px;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .policy-links h3::before { content: "🔗"; }
+        .link-list { list-style: none; padding: 0; }
+        .link-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f1f5f9;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .link-list li:last-child { border-bottom: none; }
+        .link-list a {
+            color: #2a5298;
+            text-decoration: none;
+            font-weight: 500;
+            word-break: break-all;
+            font-size: 0.9rem;
+        }
+        .link-list a:hover { text-decoration: underline; }
+        .link-tag {
+            display: inline-block; padding: 2px 8px;
+            border-radius: 4px; font-size: 0.72rem;
+            font-weight: 600; white-space: nowrap; flex-shrink: 0;
+        }
+        .link-tag.official { background: #e8f5e9; color: #2e7d32; }
+        .link-tag.local { background: #fff3e0; color: #e65100; }
+        .link-tag.national { background: #e3f2fd; color: #1565c0; }
+        .link-tag.case { background: #fce4ec; color: #c62828; }
+        .link-desc {
+            color: #64748b; font-size: 0.82rem;
+            margin-top: 3px; display: block;
+        }
+
+        .summary-box {
+            margin-top: 24px; padding: 20px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-radius: 12px; border-left: 4px solid #2a5298;
+        }
+        .summary-box h3 { color: #1e3c72; margin-bottom: 10px; font-size: 1.05rem; }
+        .summary-box ul { list-style: none; padding-left: 0; }
+        .summary-box li {
+            padding: 5px 0; padding-left: 20px;
+            position: relative; color: #334155; font-size: 0.9rem;
+        }
+        .summary-box li::before {
+            content: "▸"; position: absolute; left: 0;
+            color: #2a5298; font-weight: bold;
+        }
+
+        .hidden { display: none; }
+
+        @media (max-width: 768px) {
+            .container { padding: 20px 12px; }
+            header h1 { font-size: 1.3rem; }
+            .nav-tab { padding: 10px 16px; font-size: 0.85rem; }
+            .content-area { padding: 20px 14px; }
+            table { font-size: 0.82rem; }
+            thead th, tbody td { padding: 10px 8px; }
+            .link-list li { flex-direction: column; gap: 4px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>算力设备进口与保税区建设政策分析</h1>
+            <p>GPU服务器专项 · 海南 · 上海临港 · 天津 · 福州 · 青岛 · 珠海横琴</p>
+        </header>
+
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="switchRegion('hainan', this)">
+                海南自贸港 <span class="badge">零关税最强</span>
+            </button>
+            <button class="nav-tab" onclick="switchRegion('lingang', this)">
+                上海临港 <span class="badge">补贴最丰</span>
+            </button>
+            <button class="nav-tab" onclick="switchRegion('tianjin', this)">天津</button>
+            <button class="nav-tab" onclick="switchRegion('fuzhou', this)">福州</button>
+            <button class="nav-tab" onclick="switchRegion('qingdao', this)">青岛</button>
+            <button class="nav-tab" onclick="switchRegion('hengqin', this)">
+                珠海横琴 <span class="badge">琴澳融合</span>
+            </button>
+        </div>
+
+        <!-- 海南自贸港 -->
+        <div id="hainan" class="content-area">
+            <div class="region-header">
+                <div class="region-icon" style="background: linear-gradient(135deg, #ff6b6b, #ee5a24); color: white;">琼</div>
+                <div class="region-title">
+                    <h2>海南自贸港</h2>
+                    <div class="subtitle">全岛封关运作 · 零关税范围最广 · 数据跨境开放 · GPU三税全免</div>
+                </div>
+            </div>
+            <div class="tag-container">
+                <span class="tag highlight">零关税税目覆盖率 74%</span>
+                <span class="tag success">GPU服务器三税全免</span>
+                <span class="tag info">企业所得税 15%</span>
+                <span class="tag success">加工增值30%免关税</span>
+                <span class="tag highlight">海底数据中心已商用</span>
+            </div>
+
+            <h3 class="section-title">算力设备（GPU服务器）特殊条款</h3>
+            <div class="gpu-box">
+                <h4>⚡ GPU服务器进口核心政策</h4>
+                <ul>
+                    <li><strong>负面清单极少：</strong>不予免税的仅包括国家规定禁止进口的货物和10类不予免税商品（煤炭开采、皮革鞣制等落后产能设备）。GPU服务器、AI芯片、高端计算设备<strong>不在负面清单内</strong>。</li>
+                    <li><strong>三大免税目录豁免：</strong>《进口不予免税的重大技术装备和产品目录》《外商投资项目不予免税的进口商品目录》《国内投资项目不予免税的进口商品目录》<strong>暂不适用于海南</strong>。即使GPU设备在上述目录内，海南企业仍可免征关税、进口环节增值税和消费税。</li>
+                    <li><strong>税目覆盖：</strong>封关后零关税税目从1900项扩至约6600项（覆盖率74%），第八十四、八十五和九十章（含计算机、服务器、半导体器件）绝大多数子目均在免税范围内。</li>
+                    <li><strong>自用监管：</strong>"零关税"生产设备限海南自贸港内符合政策规定条件的企业<strong>自用</strong>，并接受海关监管。监管期内不得擅自转让；确需转让的，转让给不符合条件主体需补缴税款。</li>
+                    <li><strong>自愿缴税选项：</strong>企业进口"零关税"自用生产设备，自愿缴纳进口环节增值税和消费税的，可在报关时提出申请（便于后续抵扣）。</li>
+                </ul>
+                <div class="note">
+                    <strong>可执行性评估：</strong>GPU服务器（HS编码8471系列）明确属于"自用生产设备"范畴，只要企业注册在海南并实质性运营，进口自用GPU服务器可享受<strong>关税+增值税+消费税全免</strong>，初始投资成本可降低约18%-25%（视设备价值）。若服务外销客户比例高，综合税负优势更明显。
+                </div>
+            </div>
+
+            <h3 class="section-title">核心优势汇总</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:20%">政策维度</th>
+                        <th style="width:38%">核心优势</th>
+                        <th style="width:30%">具体说明</th>
+                        <th style="width:12%">优势等级</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>GPU进口税收</td>
+                        <td>GPU服务器及配件"三税"全免（关税+进口环节增值税+消费税）</td>
+                        <td>负面清单外直接免征；三大免税目录在海南不适用，目录内设备也可免</td>
+                        <td class="level-cell"><span class="level level-highest">最高</span></td>
+                    </tr>
+                    <tr>
+                        <td>零关税覆盖</td>
+                        <td>零关税税目比例提升至74%，覆盖6600+税目</td>
+                        <td>2025年12月封关后，进口征税商品目录外货物全面免税</td>
+                        <td class="level-cell"><span class="level level-highest">最高</span></td>
+                    </tr>
+                    <tr>
+                        <td>企业所得税</td>
+                        <td>鼓励类产业减按15%征收</td>
+                        <td>较内地标准税率25%降低10个百分点</td>
+                        <td class="level-cell"><span class="level level-high">高</span></td>
+                    </tr>
+                    <tr>
+                        <td>加工增值</td>
+                        <td>进口料件加工增值≥30%后内销内地免征关税</td>
+                        <td>可在区内进行系统集成、部署调试后免关税进入内地市场</td>
+                        <td class="level-cell"><span class="level level-high">高</span></td>
+                    </tr>
+                    <tr>
+                        <td>数据跨境</td>
+                        <td>全国首批增值电信业务开放试点，取消IDC外资股比限制</td>
+                        <td>出台《国际数据中心发展规定》，支持"来数加工"业务</td>
+                        <td class="level-cell"><span class="level level-highest">最高</span></td>
+                    </tr>
+                    <tr>
+                        <td>算力基建</td>
+                        <td>全球首个商用海底数据中心已投运（陵水、崖州湾）</td>
+                        <td>海南算力集团组建中，推动跨境算力设施建设</td>
+                        <td class="level-cell"><span class="level level-high">高</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="case-box">
+                <h4>📰 已公布案例及新闻</h4>
+                <ul class="case-list">
+                    <li>
+                        <a href="https://db.hainan.gov.cn/xwdt/yszx/202507/t20250731_3905918.html" target="_blank">海南自贸港封关政策及配套措施权威解读（海南省人民政府）</a>
+                        <span class="case-desc">省财政厅解读：封关后零关税税目从1900项扩至6637项，享惠主体覆盖全岛有实际进口需求的各类企事业单位。隆平生物技术（海南）有限公司已使用零关税政策采购科研设备。</span>
+                    </li>
+                    <li>
+                        <a href="https://www.nbd.com.cn/articles/2025-12-17/4184856.html" target="_blank">海南封关政策红利全解析：零关税、低个税、投资准入放宽（每日经济新闻）</a>
+                        <span class="case-desc">2025年12月18日全岛封关运作正式启动，企业生产所需的原材料、零部件、生产设备绝大多数在"零关税"范围内。</span>
+                    </li>
+                    <li>
+                        <a href="https://www.pwccn.com/zh/china-tax-news/2025q3/chinatax-news-aug2025-8.pdf" target="_blank">海南封关在即，新政优策升级（普华永道税务快讯）</a>
+                        <span class="case-desc">普华永道分析：新增商品如机器设备、检测仪器等显著提高开放水平；享惠主体扩大至事业单位及民办非企业单位；零关税商品可在享惠主体间自由流通。</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="summary-box">
+                <h3>🎯 在该区域开展算力业务的利好政策评估</h3>
+                <ul>
+                    <li><strong>初始投资成本最低：</strong>进口GPU服务器可节省约18%-25%的综合税费（关税+13%增值税），千万级设备投资可直接节省数百万资金</li>
+                    <li><strong>运营税负持续优惠：</strong>15%企业所得税（对比内地25%），叠加个人所得税最高15%，高端人才引入成本降低</li>
+                    <li><strong>外向型业务免税闭环：</strong>若算力服务主要面向境外客户（外销），设备进口环节+企业所得税+个人所得税形成全链条低税负</li>
+                    <li><strong>数据跨境便利：</strong>"来数加工"业务模式合规，支持游戏出海、跨境电商、国际AI训练等数据密集型业务</li>
+                    <li><strong>风险提示：</strong>需确保"实质性运营"（人员、账务、场所）；对美加征关税仍适用于海南（需规避美国原产地设备）；设备监管期内不得擅自转让</li>
+                </ul>
+            </div>
+
+            <div class="policy-links">
+                <h3>政策原文链接</h3>
+                <ul class="link-list">
+                    <li>
+                        <span class="link-tag national">国家级</span>
+                        <div>
+                            <a href="https://fgk.chinatax.gov.cn/zcfgk/c102416/c5202150/content.html" target="_blank">财政部 海关总署 税务总局关于海南自由贸易港自用生产设备"零关税"政策的通知（财关税〔2021〕7号）</a>
+                            <span class="link-desc">明确全岛封关前自用生产设备免征关税、进口环节增值税和消费税；三大免税目录暂不适用于海南</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="link-tag national">国家级</span>
+                        <div>
+                            <a href="https://fgk.chinatax.gov.cn/zcfgk/c102416/c5241947/content.html" target="_blank">财政部 海关总署 税务总局关于海南自由贸易港货物进出"一线""二线"税收征管的通知</a>
+                            <span class="link-desc">2025年7月18日发布，明确封关运作后货物税收征管及"零关税"政策衔接，税目扩至6600+</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="link-tag official">省级法规</span>
+                        <div>
+                            <a href="https://www.hainan.gov.cn/hainan/dfxfg/202411/f6f58aed43374fe8afcd36ae68dc117a.shtml" target="_blank">海南自由贸易港国际数据中心发展规定</a>
+                            <span class="link-desc">海南省人大常委会公告第51号，支持国际数据中心建设与数据跨境流动</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="link-tag national">国家级</span>
+                        <div>
+                            <a href="https://fgk.chinatax.gov.cn/zcfgk/c102416/c5202150/content.html" target="_blank">海南自贸港自用生产设备"零关税"负面清单</a>
+                            <span class="link-desc">仅10类商品不予免税，GPU服务器、AI芯片明确不在负面清单内</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 上海临港 -->
+        <div id="lingang" class="content-area hidden">
+            <div class="region-header">
+                <div class="region-icon" style="background: linear-gradient(135deg, #4834d4, #686de0); color: white;">沪</div>
+                <div class="region-title">
+                    <h2>上海临港新片区</h2>
+                    <div class="subtitle">国际数据港 · 算力补贴最丰富 · 国产GPU采购补贴10% · 产业生态成熟</div>
+                </div>
+            </div>
+            <div class="tag-container">
+                <span class="tag highlight">建设补贴最高1000万</span>
+                <span class="tag success">算力租赁补贴30%-50%</span>
+                <span class="tag info">国产GPU采购补贴10%</span>
+                <span class="tag highlight">PUE<1.25额外补贴</span>
+                <span class="tag success">OPC算力补贴80%</span>
+            </div>
+
+            <h3 class="section-title">算力设备（GPU服务器）特殊条款</h3>
+            <div class="gpu-box">
+                <h4>⚡ GPU服务器进口与采购核心政策</h4>
+                <ul>
+                    <li><strong>进口设备保税：</strong>洋山特殊综合保税区等适用增值税一般纳税人资格试点，进口自用机器设备、基建物资<strong>暂免征收</strong>进口关税和进口环节增值税、消费税。但暂免税款按海关监管年限分摊，每年按<strong>内外销比例</strong>补税（外销比例部分免税，内销比例部分按区外政策补税）。</li>
+                    <li><strong>国产GPU采购补贴（10%）：</strong>临港新片区出台协同采购正面清单，鼓励智算企业采购<strong>国产GPU（图形处理器）</strong>等上游产品。企业在建设算力平台过程中购买正面清单中的国产GPU产品，依据实际采购智算芯片的发票额，按照不高于<strong>10%</strong>予以补贴，总金额不超过<strong>1000万元</strong>。</li>
+                    <li><strong>智算中心建设补贴：</strong>新建智算中心（智算集群总体投产规模达到<strong>1000PFLOPS以上</strong>）予以资助，资助周期不超过5年，总金额不超过<strong>1000万元</strong>。对新建的国家级或市级智算中心，依据国家或市级支持经费的比例给予配套资助，最高不超过1:0.5。</li>
+                    <li><strong>算力租赁补贴：</strong>对使用临港新片区算力资源的企业或机构，按其实际发生的算力租赁支出最高<strong>30%</strong>的比例给予补贴，单个项目不超过1000万元；对开展国际数据业务（"来数加工"、国际数据云服务）的，算力租赁补贴比例最高可达<strong>50%</strong>。</li>
+                    <li><strong>绿色算力补贴：</strong>对绿电比例不低于<strong>80%</strong>且综合PUE不高于<strong>1.18</strong>的重点项目，按照总投资额最高<strong>30%</strong>给予资助，总金额不超过1000万元；对纳入国家级认定的项目，资助金额可提高至<strong>3000万元</strong>。（2024年版为绿电≥20%、PUE<1.25，2025年修订版提高了绿色标准）</li>
+                    <li><strong>外资研发免税：</strong>外资研发中心进口国内不能生产的科研用品（含高端GPU测试设备），可免征进口关税和进口环节增值税、消费税。</li>
+                    <li><strong>OPC算力补贴：</strong>对"超级个体"购买算力服务、数据集服务、大模型服务以及AI工具链的费用，给予最高不超过<strong>80%</strong>的补贴，年度最高不超过30万元。</li>
+                </ul>
+                <div class="note">
+                    <strong>可执行性评估：</strong>若企业设在洋山特殊综保区内，进口GPU服务器可暂缓缴税；但如主要服务内销客户，监管年限内需按比例补税。建议优先申请<strong>国产GPU采购补贴</strong>（10%，最高1000万）叠加<strong>建设补贴</strong>（最高1000万），综合降低硬件成本。外资研发中心认定可进一步豁免高端测试设备进口税。需注意2025年修订版对绿电和PUE要求更严格（绿电80%、PUE≤1.18）。
+                </div>
+            </div>
+
+            <h3 class="section-title">核心优势汇总</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:20%">政策维度</th>
+                        <th style="width:38%">核心优势</th>
+                        <th style="width:30%">具体说明</th>
+                        <th style="width:12%">优势等级</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>国产GPU采购</td>
+                        <td>采购国产GPU等上游产品享受10%补贴，最高1000万元</td>
+                        <td>智算产业联盟协同采购正面清单，支持昇腾、寒武纪等国产芯片应用</td>
+                        <td class="level-cell"><span class="level level-highest">最高</span></td>
+                    </tr>
+                    <tr>
+                        <td>算力建设补贴</td>
+                        <td>新建智算中心（1000PFLOPS以上）最高资助1000万元</td>
+                        <td>2025年修订政策（沪自贸临管委〔2025〕40号），有效期至2027年底</td>
+                        <td class="level-cell"><span class="level level-highest">最高</span></td>
+                    </tr>
+                    <tr>
+                        <td>算力租赁补贴</td>
+                        <td>算力租赁补贴30%-50%，最高1000万元</td>
+                        <td>国际数据业务（来数加工）算力租赁补贴可达50%</td>
+                        <td class="level-cell"><span class="level level-highest">最高</span></td>
+                    </tr>
+                    <tr>
+                        <td>绿色算力补贴</td>
+                        <td>绿电≥80%且PUE≤1.18的项目最高资助1000万元（国家级认定可达3000万）</td>
+                        <td>2025年修订版提高绿色标准，鼓励"风光海氢储+算力"模式</td>
+                        <td class="level-cell"><span class="level level-high">高</span></td>
+                    </tr>
+                    <tr>
+                        <td>进口设备保税</td>
+                        <td>洋山特殊综保区等适用一般纳税人试点，自用设备暂免征税</td>
+                        <td>进口机器设备、基建物资暂缓缴纳关税及进口环节增值税</td>
+                        <td class="level-cell"><span class="level level-high">高</span></td>
+                    </tr>
+                    <tr>
+                        <td>OPC算力补贴</td>
+                        <td>超级个体购买算力服务最高补贴80%，年度上限30万元</td>
+                        <td>2026年《发展"超级个体"经济的若干措施》覆盖算力、模型、语料券</td>
+                        <td class="level-cell"><span class="level level-medium">中</span></td>
+                    </tr>
+                    <tr>
+                        <td>数据跨境</td>
+                        <td>全国首个数据跨境服务中心，国际数据港基础设施完善</td>
+                        <td>跨境数据流动便利化程度高，适合国际算力调度业务</td>
+                        <td class="level-cell"><span class="level level-high">高</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="case-box">
+                <h4>📰 已公布案例及新闻</h4>
+                <ul class="case-list">
+                    <li>
+                        <a href="https://www.jiemian.com/article/9516460.html" target="_blank">临港新片区成立智算产业联盟，到2025年算力产业总体规模要突破100亿元（界面新闻）</a>
+                        <span class="case-desc">2023年6月，12家企业签署智算产业上下游企业协同采购协议。商汤等一大批算力平台已落地临港。管委会透露将出台协同采购正面清单，鼓励采购国产GPU，并给予补贴。</span>
+                    </li>
+                    <li>
+                        <a href="https://www.163.com/dy/article/K0D67GES0538AZAS.html" target="_blank">关于修订《临港新片区进一步集聚发展新型算力赋能新质生产力若干政策》的通知（网易号转载管委会文件）</a>
+                        <span class="case-desc">2025年5月24日发布沪自贸临管委〔2025〕40号，明确算力租赁补贴30%-50%、绿色算力资助最高3000万元、国产GPU采购补贴10%等修订条款。</span>
+                    </li>
+                    <li>
+                        <a href="https://www.shobserver.com/news/detail?id=1091711" target="_blank">算力补贴拉满！这里的政策组合拳赋能OPC创新创业（上观新闻）</a>
+                        <span class="case-desc">2026年4月报道：临港发布《发展"超级个体"经济的若干措施》，对OPC购买算力、数据集、大模型服务给予最高80%补贴，高校学生创办的OPC额外享受20%补贴。</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="summary-box">
+                <h3>🎯 在该区域开展算力业务的利好政策评估</h3>
+                <ul>
+                    <li><strong>补贴叠加效应最强：</strong>可同时申请建设补贴（1000万）+租赁补贴（1000万）+国产GPU采购补贴（10%，最高1000万），综合降低初始投资30%-40%</li>
+                    <li><strong>国产替代红利：</strong>采购国产GPU（华为昇腾、寒武纪等）不仅有10%补贴，还可规避美国原产地设备的高额加征关税风险</li>
+                    <li><strong>算力消纳保障：</strong>政府发放算力券补贴下游企业使用算力，帮助算力中心快速达到高外销比例，降低保税区补税负担</li>
+                    <li><strong>产业生态完善：</strong>商汤、特斯拉等头部企业集聚，上下游协同采购协议降低供应链成本</li>
+                    <li><strong>风险提示：</strong>PUE需严格控制在1.18以下（2025年修订版），绿电比例≥80%；保税区设备监管年限内需按比例补税（内销部分）；需避免与市级/浦东新区政策重复申报（从优从高不重复）</li>
+                </ul>
+            </div>
+
+            <div class="policy-links">
+                <h3>政策原文链接</h3>
+                <ul class="link-list">
+                    <li>
+                        <span class="link-tag national">国家级</span>
+                        <div>
+                            <a href="https://fgk.chinatax.gov.cn/zcfgk/c100012/c5194884/content.html" target="_blank">国家税务总局 财政部 海关总署关于在综合保税区推广增值税一般纳税人资格试点的公告</a>
+                            <span class="link-desc">2025年12月11日发布，洋山特殊综合保税区等适用，进口自用设备暂免征收进口税收</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="link-tag local">管委会文件</span>
+                        <div>
+                            <a href="https://www.163.com/dy/article/K0D67GES0538AZAS.html" target="_blank">关于修订《中国（上海）自由贸易试验区临港新片区进一步集聚发展新型算力赋能新质生产力若干政策》的通知（沪自贸临管委〔2025〕40号）</a>
+                            <span class="link-desc">2025年5月24日发布，有效期至2027年12月31日。明确算力租赁补贴30%-50%、绿色算力资助最高3000万、国产GPU采购补贴10%等条款</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="link-tag local">政策汇总</span>
+                        <div>
+                            <a href="https://www.sh-hitech.com/ryrd/11840.html" target="_blank">《临港新片区进一步集聚发展新型算力赋能新质生产力若干政策》2024-2029（上海科技企业服务）</a>
+                            <span class="link-desc">2024年原版政策全文，含布局智能算力体系、提升算力资源部署、高效调度、绿色智算、自主可控智算要素、大模型研发等11项措施</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="link-tag local">政策汇总</span>
+                        <div>
+                            <a href="https://www.sh-keji.cn/ryrd/13434.html" target="_blank">《临港新片区进一步集聚发展新型算力赋能新质生产力若干政策》2024-2029（上海市产业政策服务）</a>
+                            <span class="link-desc">2024年原版政策全文备份链接，内容同上</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="link-tag local">市级政策</span>
+                        <div>
+                            <a href="https://www.sheitc.sh.gov.cn/cyfz/20250728/e571042d40384fcf859a347eb99e10df.html" target="_blank">上海市经济信息化委关于印发《上海市进一步扩大人工智能应用的若干措施》的通知（沪经信智〔2025〕489号）</a>
+                            <span class="link-desc">2025年7月28日发布，市级发放6亿元算力券，对租用智能算力给予最高30%租金补贴，自主智能算力设施部署项目给予最高10%建设支持</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="link-tag local">区级政策</span>
+                        <div>
+                            <a href="https://www.pudong.gov.cn/china-shftz/tzgg/20250730/811610.html" target="_blank">浦东新区/自贸区人工智能产业政策（ Pudong.gov.cn）</a>
+                            <span class="link-desc">2025年7月30日发布，市区协同给予最多1年、最高100%的算力租金补贴；向符合条件的创新型企业发放最高100%支持的100万元算力券、模型券、语料券</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="link-tag local">管委会文件</span>
+                        <div>
+                            <a href="https://www.sh-hitech.com/qtfc/22366.html" target="_blank">《临港新片区发展"超级个体"经济的若干措施》2026-2029</a>
+                            <span class="link-desc">2026年5月7日发布，对OPC购买算力服务、数据集服务、大模型服务及AI工具链费用给予最高80%补贴，年度最高30万元</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 天津 -->
+        <div id="tianjin" class="content-area hidden">
+            <div class="region-header">
+                <div class="region-icon" style="background: linear-gradient(135deg, #00b894, #00cec9); color: white;">津</div>
+                <div class="region-title">
+                    <h2>天津</h2>
+                    <div class="subtitle">京津冀枢纽 · 东数西算节点 · 北方算力门户 · 综保区一般纳税人试点</div>
+                </div>
+            </div>
+            <div class="tag-container">
+                <span class="tag info">东数西算京津冀枢纽</span>
+                <span class="tag success">综保区一般纳税人试点</span>
+                <span class="tag highlight">服务北方市场物流成本低</span>
+            </div>
+
+            <h3 class="section-title">算力设备（GPU服务器）特殊条款</h3>
+            <div class="gpu-box">
+                <h4>⚡ GPU服务器进口核心政策</h4>
+                <ul>
+                    <li><strong>综保区一般纳税人试点：</strong>天津港保税区、东疆综合保税区适用全国推广的增值税一般纳税人资格试点。试点企业进口自用设备（含GPU服务器、机房基建物资）<strong>暂免征收</strong>进口关税和进口环节增值税、消费税。</li>
+                    <li><strong>年度比例补税：</strong>暂免税款按海关监管年限分摊，每年按<strong>内外销比例</strong>补税——外销比例部分免税，内销比例部分按区外政策补税。若算力中心主要服务北京、天津等北方客户（内销），需做好补税预算。</li>
+                    <li><strong>东数西算节点定位：</strong>作为国家算力网络京津冀枢纽节点，天津在承接北京外溢算力需求方面有地理和网络时延优势，适合部署推理型GPU集群服务京津冀政务、金融、科研客户。</li>
+                    <li><strong>物流分拨优势：</strong>天津港是北方最大港口，适合大批量GPU设备进口后的仓储分拨，降低北方区域交付物流成本。</li>
+                </ul>
+                <div class="note">
+                    <strong>可执行性评估：</strong>天津的GPU进口税收优惠属于"暂免+比例补税"模式，不如海南的"直接全免"彻底。建议将算力中心定位为<strong>服务北方外销型业务</strong>（如跨境游戏、出海企业算力租赁）或争取高外销比例，以最大化免税额度。同时需关注滨海新区是否有算力建设专项补贴可叠加申请。
+                </div>
+            </div>
+
+            <h3 class="section-title">核心优势汇总</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:20%">政策维度</th>
+                        <th style="width:38%">核心优势</th>
+                        <th style="width:30%">具体说明</th>
+                        <th style="width:12%">优势等级</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>战略定位</td>
+                        <td>"东数西算"工程京津冀枢纽节点</td>
+                        <td>国家算力网络核心节点，享受国家算力资源调度优先权</td>
+                        <td class="level-cell"><span class="level level-high">高</span></td>
+                    </tr>
+                    <tr>
+                        <td>进口设备保税</td>
+                        <td>天津港保税区、东疆综保区适用一般纳税人资格试点</td>
+                        <td>进口自用机器设备、基建物资暂免征收关税及进口环节增值税</td>
+                        <td class="level-cell"><span class="level level-high">高</span></td>
+                    </tr>
+                    <tr>
+                        <td>区域市场</td>
+                        <td>服务京津冀北方市场，物流与网络时延优势明显</td>
+                        <td>贴近北京金融、政务、科研算力需求，网络骨干节点地位</td>
+                        <td class="level-cell"><span class="level level-high">高</span></td>
+                    </tr>
+                    <tr>
+                        <td>产业协同</td>
+                        <td>数据中心集约化建设与边缘算力协同布局</td>
+                        <td>《天津市算力产业发展实施方案(2024-2026年)》推动产业集聚</td>
+                        <td class="level-cell"><span class="level level-medium">中</span></td>
+                    </tr>
+                    <tr>
+                        <td>专项补贴</td>
+                        <td>算力专项补贴力度不及上海临港明确</td>
+                        <td>需结合具体综保区及滨海新区产业政策申请，补贴额度待确认</td>
+                        <td class="level-cell"><span class="level level-medium">中</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="summary-box">
+                <h3>🎯 在该区域开展算力业务的利好政策评估</h3>
+                <ul>
+                    <li><strong>北方市场门户：</strong>服务京津冀政务云、金融算力、科研计算，网络时延低于南方节点</li>
+                    <li><strong>物流成本优势：</strong>天津港进口GPU设备后，向北京、河北、山东等地分拨的物流成本低于从海南/上海转运</li>
+                    <li><strong>政策叠加空间：</strong>可争取滨海新区数字经济专项投资+综保区保税政策，但补贴额度需具体洽谈</li>
+                    <li><strong>风险提示：</strong>保税区设备内销比例补税机制意味着主要服务内地客户时税收优惠有限；算力专项补贴不如沪琼明确，需提前与管委会确认</li>
+                </ul>
+            </div>
+
+            <div class="policy-links">
+                <h3>政策原文链接</h3>
+                <ul class="link-list">
+                    <li>
+                        <span class="link-tag national">国家级</span>
+                        <div>
+                            <a href="https://fgk.chinatax.gov.cn/zcfgk/c100012/c5194884/content.html" target="_blank">国家税务总局 财政部 海关总署关于在综合保税区推广增值税一般纳税人资格试点的公告</a>
+                            <span class="link-desc">2025年12月11日发布，天津港保税区、东疆综保区等适用</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="link-tag local">地方政策</span>
+                        <div>
+                            <a href="http://www.tj.gov.cn/zwgk/zcwj/zcjd/" target="_blank">天津市人民政府政策解读栏目</a>
+                            <span class="link-desc">可搜索"算力产业""数据中心"获取《天津市算力产业发展实施方案(2024-2026年)》原文及解读</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="link-tag local">地方政策</span>
+                        <div>
+                            <a href="http://www.tjftz.gov.cn/" target="_blank">天津港保税区管委会官网</a>
+                            <span class="link-desc">保税区产业政策、企业入驻指南及税收优惠实施细则发布平台</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="link-tag local">地方政策</span>
+                        <div>
+                            <a href="http://www.dongjiang.gov.cn/" target="_blank">天津东疆综合保税区官网</a>
+                            <span class="link-desc">东疆综保区物流、仓储及加工贸易政策，适合设备进口分拨业务</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 福州 -->
+        <div id="fuzhou" class="content-area hidden">
+            <div class="region-header">
+                <div class="region-icon" style="background: linear-gradient(135deg, #e17055, #fdcb6e); color: white;">闽</div>
+                <div class="region-title">
+                    <h2>福建福州</h2>
+                    <div class="subtitle">数字福建核心 · 对台数据合作 · 海峡算力通道 · 综保区一般纳税人试点</div>
+                </div>
+            </div>
+            <div class="tag-container">
+                <span class="tag info">数字福建核心区域</span>
+                <span class="tag success">综保区一般纳税人试点</span>
+                <span class="tag highlight">对台数据合作地缘优势</span>
+            </div>
+
+            <h3 class="section-title">算力设备（GPU服务器）特殊条款</h3>
+            <div class="gpu-box">
+                <h4>⚡ GPU服务器进口核心政策</h4>
+                <ul>
+                    <li><strong>综保区一般纳税人试点：</strong>福州综合保税区、福州江阴港综合保税区适用全国推广的增值税一般纳税人资格试点。试点企业进口自用GPU服务器、机房基建物资<strong>暂免征收</strong>进口关税和进口环节增值税、消费税，按内外销比例年度补税。</li>
+                    <li><strong>对台数据通道潜力：</strong>福建作为两岸融合发展示范区，具备独特的对台数据通道政策潜力。若未来开放对台算力服务或数据互通，福州将是首选节点。</li>
+                    <li><strong>数字福建基础：</strong>省政府对数字经济基础设施有持续投入，算力中心可获配套支持，但算力专项突破政策检索中未明确发现超越沪琼的条款。</li>
+                </ul>
+                <div class="note">
+                    <strong>可执行性评估：</strong>福州的GPU进口税收优惠属于全国统一的综保区试点政策，无额外特殊豁免。优势在于<strong>对台地缘</strong>和<strong>数字福建</strong>产业基础。建议作为对台业务的前置布局节点，或争取省级数字经济专项投资。若主要服务内地市场，税收优惠有限。
+                </div>
+            </div>
+
+            <h3 class="section-title">核心优势汇总</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:20%">政策维度</th>
+                        <th style="width:38%">核心优势</th>
+                        <th style="width:30%">具体说明</th>
+                        <th style="width:12%">优势等级</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>地缘优势</td>
+                        <td>对台数据合作与两岸算力互通的区位优势</td>
+                        <td>福建作为两岸融合发展示范区，具备独特的数据通道政策潜力</td>
+                        <td class="level-cell"><span class="level level-high">高</span></td>
+                    </tr>
+                    <tr>
+                        <td>进口设备保税</td>
+                        <td>福州综合保税区、江阴港综保区适用一般纳税人资格试点</td>
+                        <td>进口自用设备暂免征收关税及进口环节增值税</td>
+                        <td class="level-cell"><span class="level level-high">高</span></td>
+                    </tr>
+                    <tr>
+                        <td>数字基础</td>
+                        <td>"数字福建"核心区域，具备数据产业发展政策基础</td>
+                        <td>省政府对数字经济基础设施有持续投入，算力中心可获配套支持</td>
+                        <td class="level-cell"><span class="level level-medium">中</span></td>
+                    </tr>
+                    <tr>
+                        <td>专项政策</td>
+                        <td>算力专项突破政策检索中未明确发现</td>
+                        <td>需争取省级数字经济专项或自贸区创新政策，目前补贴力度弱于沪琼</td>
+                        <td class="level-cell"><span class="level level-medium">中</span></td>
+                    </tr>
+                    <tr>
+                        <td>港口物流</td>
+                        <td>江阴港综保区进出口活跃，物流通道成熟</td>
+                        <td>2025年进出口数据增长，具备设备进口及分拨的物流条件</td>
+                        <td class="level-cell"><span class="level level-medium">中</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="summary-box">
+                <h3>🎯 在该区域开展算力业务的利好政策评估</h3>
+                <ul>
+                    <li><strong>对台业务前置布局：</strong>若未来两岸数据互通政策放开，福州将具备先发优势，适合部署面向台湾游戏、金融、电商客户的算力节点</li>
+                    <li><strong>省级配套争取：</strong>建议争取福建省数字经济基础设施专项投资或自贸区创新政策，弥补国家层面补贴不足的短板</li>
+                    <li><strong>区域节点定位：</strong>适合作为东南沿海区域性算力节点，而非全国性主算力中心</li>
+                    <li><strong>风险提示：</strong>保税区设备内销比例补税机制限制较大；算力专项政策弱于沪琼；对台政策存在不确定性</li>
+                </ul>
+            </div>
+
+            <div class="policy-links">
+                <h3>政策原文链接</h3>
+                <ul class="link-list">
+                    <li>
+                        <span class="link-tag national">国家级</span>
+                        <div>
+                            <a href="https://fgk.chinatax.gov.cn/zcfgk/c100012/c5194884/content.html" target="_blank">国家税务总局 财政部 海关总署关于在综合保税区推广增值税一般纳税人资格试点的公告</a>
+                            <span class="link-desc">2025年12月11日发布，福州综合保税区、江阴港综保区等适用</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="link-tag local">地方政策</span>
+                        <div>
+                            <a href="http://www.fuzhou.gov.cn/" target="_blank">福州市人民政府官网</a>
+                            <span class="link-desc">可搜索"数字经济""数据中心"获取市级产业扶持政策</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="link-tag local">地方政策</span>
+                        <div>
+                            <a href="http://www.fjxz.gov.cn/" target="_blank">中国（福建）自由贸易试验区福州片区官网</a>
+                            <span class="link-desc">福州片区创新政策、产业导向及企业准入指南发布平台</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="link-tag local">地方政策</span>
+                        <div>
+                            <a href="http://www.fjepb.gov.cn/" target="_blank">福建省商务厅（自贸办）</a>
+                            <span class="link-desc">省级自贸区政策、跨境电商及数字贸易相关政策发布</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 青岛 -->
+        <div id="qingdao" class="content-area hidden">
+            <div class="region-header">
+                <div class="region-icon" style="background: linear-gradient(135deg, #0984e3, #74b9ff); color: white;">鲁</div>
+                <div class="region-title">
+                    <h2>青岛</h2>
+                    <div class="subtitle">东北亚枢纽 · 面向日韩 · 综保区进出口活跃 · 一般纳税人试点</div>
+                </div>
+            </div>
+            <div class="tag-container">
+                <span class="tag info">东北亚贸易枢纽</span>
+                <span class="tag success">综保区进口增长25%</span>
+                <span class="tag highlight">面向日韩市场</span>
+            </div>
+
+            <h3 class="section-title">算力设备（GPU服务器）特殊条款</h3>
+            <div class="gpu-box">
+                <h4>⚡ GPU服务器进口核心政策</h4>
+                <ul>
+                    <li><strong>综保区一般纳税人试点：</strong>青岛胶州湾综合保税区、即墨综合保税区适用全国推广的增值税一般纳税人资格试点。试点企业进口自用GPU服务器、机房基建物资<strong>暂免征收</strong>进口关税和进口环节增值税、消费税，按内外销比例年度补税。</li>
+                    <li><strong>东北亚网络优势：</strong>青岛与日韩海底光缆连接密集，网络时延优势明显，适合部署面向日本、韩国市场的游戏渲染、AI推理、跨境电商算力节点。</li>
+                    <li><strong>贸易活跃度高：</strong>2025年综保区进口额同比增长约25%，海关特殊监管区域运营成熟，通关效率高，适合大批量GPU设备进口。</li>
+                </ul>
+                <div class="note">
+                    <strong>可执行性评估：</strong>青岛的GPU进口税收优惠属于全国统一的综保区试点政策。核心优势在于<strong>东北亚地缘</strong>和<strong>港口物流</strong>。建议定位为面向日韩市场的跨境算力节点，或作为设备东北亚分拨中心。若主要服务内地市场，税收优惠有限且需补税。
+                </div>
+            </div>
+
+            <h3 class="section-title">核心优势汇总</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:20%">政策维度</th>
+                        <th style="width:38%">核心优势</th>
+                        <th style="width:30%">具体说明</th>
+                        <th style="width:12%">优势等级</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>地缘优势</td>
+                        <td>面向日韩市场的东北亚跨境算力服务枢纽</td>
+                        <td>青岛与日韩海底光缆连接密集，网络时延优势明显</td>
+                        <td class="level-cell"><span class="level level-high">高</span></td>
+                    </tr>
+                    <tr>
+                        <td>进口设备保税</td>
+                        <td>胶州湾综保区、即墨综保区适用一般纳税人资格试点</td>
+                        <td>进口自用设备暂免征收关税及进口环节增值税</td>
+                        <td class="level-cell"><span class="level level-high">高</span></td>
+                    </tr>
+                    <tr>
+                        <td>贸易活跃</td>
+                        <td>2025年综保区进口额同比增长约25%</td>
+                        <td>海关特殊监管区域运营成熟，通关效率高</td>
+                        <td class="level-cell"><span class="level level-medium">中</span></td>
+                    </tr>
+                    <tr>
+                        <td>专项政策</td>
+                        <td>算力产业专项政策支撑相对较弱</td>
+                        <td>需结合山东省新基建政策或青岛自贸区创新政策争取支持</td>
+                        <td class="level-cell"><span class="level level-medium">中</span></td>
+                    </tr>
+                    <tr>
+                        <td>产业配套</td>
+                        <td>家电、电子制造业基础可支撑部分算力设备本地化配套</td>
+                        <td>海尔等本地企业有边缘计算布局，产业生态待完善</td>
+                        <td class="level-cell"><span class="level level-medium">中</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="summary-box">
+                <h3>🎯 在该区域开展算力业务的利好政策评估</h3>
+                <ul>
+                    <li><strong>日韩市场跳板：</strong>面向日本、韩国市场的跨境算力与数据服务（游戏、动漫渲染、跨境电商），网络时延低于国内其他节点</li>
+                    <li><strong>设备分拨中心：</strong>利用青岛港优势进行算力设备东北亚分拨，服务日韩企业在中国境内的算力需求</li>
+                    <li><strong>省级政策争取：</strong>建议结合山东省级新基建投资政策或青岛自贸区创新试点争取补贴，弥补专项政策不足</li>
+                    <li><strong>风险提示：</strong>保税区设备内销比例补税机制限制较大；算力专项政策支撑较弱；产业生态不如沪琼成熟</li>
+                </ul>
+            </div>
+
+            <div class="policy-links">
+                <h3>政策原文链接</h3>
+                <ul class="link-list">
+                    <li>
+                        <span class="link-tag national">国家级</span>
+                        <div>
+                            <a href="https://fgk.chinatax.gov.cn/zcfgk/c100012/c5194884/content.html" target="_blank">国家税务总局 财政部 海关总署关于在综合保税区推广增值税一般纳税人资格试点的公告</a>
+                            <span class="link-desc">2025年12月11日发布，胶州湾综保区、即墨综保区等适用</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="link-tag local">地方政策</span>
+                        <div>
+                            <a href="http://www.qingdao.gov.cn/" target="_blank">青岛市人民政府官网</a>
+                            <span class="link-desc">可搜索"新基建""数字经济"获取市级算力产业扶持政策</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="link-tag local">地方政策</span>
+                        <div>
+                            <a href="http://www.qingdaoftz.gov.cn/" target="_blank">中国（山东）自由贸易试验区青岛片区官网</a>
+                            <span class="link-desc">青岛片区产业准入、税收优惠及跨境电商政策发布平台</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="link-tag local">地方政策</span>
+                        <div>
+                            <a href="http://www.shandong.gov.cn/" target="_blank">山东省人民政府官网</a>
+                            <span class="link-desc">可搜索"数据中心""算力基础设施"获取省级新基建投资政策</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 珠海横琴 -->
+        <div id="hengqin" class="content-area hidden">
+            <div class="region-header">
+                <div class="region-icon" style="background: linear-gradient(135deg, #a29bfe, #6c5ce7); color: white;">琴</div>
+                <div class="region-title">
+                    <h2>珠海横琴粤澳深度合作区</h2>
+                    <div class="subtitle">琴澳融合 · 分线管理 · 自用机器设备三税全免 · 加工增值30%免关税</div>
+                </div>
+            </div>
+            <div class="tag-container">
+                <span class="tag highlight">自用机器设备三税全免</span>
+                <span class="tag success">加工增值30%免关税</span>
+                <span class="tag info">103家单位获免税资格</span>
+                <span class="tag highlight">保税进出口增长31.3%</span>
+                <span class="tag success">数据跨境白名单探索</span>
+            </div>
+
+            <h3 class="section-title">算力设备（GPU服务器）特殊条款</h3>
+            <div class="gpu-box">
+                <h4>⚡ GPU服务器进口核心政策</h4>
+                <ul>
+                    <li><strong>自用机器设备三税全免：</strong>在合作区登记注册且具有独立法人资格的企业、行政机关、事业单位、法定机构、社会团体、民办非企业单位，进口自用的<strong>机器、设备</strong>（不含飞机、汽车、船舶及游艇等交通设备）、模具及维修上述商品用的零配件、基建物资（不含室内装饰、装修物资），<strong>免征进口关税、进口环节增值税和消费税</strong>。</li>
+                    <li><strong>其他货物保税：</strong>除上述5类自用货物可免税外，<strong>其他货物均可保税进入</strong>。这意味着GPU服务器配件、耗材等均可享受保税政策。</li>
+                    <li><strong>加工增值免关税：</strong>合作区内企业对含有进口料件的货物进行制造、加工后的增值部分达到或超过<strong>30%</strong>的货物，经"二线"进入内地可<strong>免征进口关税</strong>（仍需征收进口环节增值税和消费税）。算力中心可在区内进行服务器组装、系统集成、软件部署后免关税进入内地。</li>
+                    <li><strong>分线管理优势：</strong>横琴与澳门之间设为"一线"，横琴与内地之间设为"二线"。经"一线"进入合作区的货物实施备案管理，通关便利；经"二线"进入内地视同出口，可按规定实行增值税和消费税退税。</li>
+                    <li><strong>数据跨境探索：</strong>依托横琴粤澳深度合作区等重大合作平台，建立港澳企业数据跨境流动机制，探索建立跨境数据流动<strong>"白名单"</strong>制度。</li>
+                    <li><strong>放弃免税限制：</strong>主动放弃免税资格的，<strong>36个月内不得再次申请</strong>免税资格。</li>
+                </ul>
+                <div class="note">
+                    <strong>可执行性评估：</strong>横琴的GPU服务器进口政策与海南类似，属于<strong>直接三税全免</strong>（非暂免），且无需像综保区那样按内外销比例年度补税。只要企业注册在横琴并符合主体资格，进口自用GPU服务器即可享受关税+增值税+消费税全免。加工增值30%政策为算力设备"出海"与"入内"提供了灵活通道。目前已有103家单位获免税主体资格，政策执行成熟度高。
+                </div>
+            </div>
+
+            <h3 class="section-title">核心优势汇总</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width:20%">政策维度</th>
+                        <th style="width:38%">核心优势</th>
+                        <th style="width:30%">具体说明</th>
+                        <th style="width:12%">优势等级</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>GPU进口税收</td>
+                        <td>自用机器设备（含GPU服务器）免征关税+进口环节增值税+消费税</td>
+                        <td>6类主体可申请免税资格，直接免征而非暂免，无需后续按比例补税</td>
+                        <td class="level-cell"><span class="level level-highest">最高</span></td>
+                    </tr>
+                    <tr>
+                        <td>保税范围</td>
+                        <td>除5类自用免税货物外，其他货物均可保税进入</td>
+                        <td>GPU配件、耗材等享受保税，通关便利</td>
+                        <td class="level-cell"><span class="level level-high">高</span></td>
+                    </tr>
+                    <tr>
+                        <td>加工增值</td>
+                        <td>加工增值≥30%后经"二线"进入内地免征进口关税</td>
+                        <td>可在区内进行系统集成、部署调试后免关税进入内地市场</td>
+                        <td class="level-cell"><span class="level level-high">高</span></td>
+                    </tr>
+                    <tr>
+                        <td>数据跨境</td>
+                        <td>探索建立跨境数据流动"白名单"制度</td>
+                        <td>依托琴澳合作平台，港澳企业数据跨境流动机制先行先试</td>
+                        <td class="level-cell"><span class="level level-high">高</span></td>
+                    </tr>
+                    <tr>
+                        <td>政策成熟度</td>
+                        <td>103家单位获免税主体资格，免保税货物进出口值2.6亿元</td>
+                        <td>2025年合作区保税进出口值同比增长31.3%，政策执行成熟</td>
+                        <td class="level-cell"><span class="level level-high">高</span></td>
+                    </tr>
+                    <tr>
+                        <td>琴澳协同</td>
+                        <td>澳资企业突破7600家，生活就业澳门居民达3万人</td>
+                        <td>琴澳同城化加速，适合服务澳门及葡语国家市场的算力业务</td>
+                        <td class="level-cell"><span class="level level-medium">中</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="case-box">
+                <h4>📰 已公布案例及新闻</h4>
+                <ul class="case-list">
+                    <li>
+                        <a href="https://pub-zhtb.hizh.cn/a/202603/02/AP69a54a48e4b00e8ea1b906ba.html" target="_blank">从"纸面"到"地面"，横琴分线管理如何影响你我？（珠海特区报）</a>
+                        <span class="case-desc">2026年3月报道：截至目前"一线"免税进口主体达109家；区内已有一批企业适用"二线"入区退税政策、加工增值30%免关税政策；2025年合作区保税进出口值同比增长31.3%。</span>
+                    </li>
+                    <li>
+                        <a href="https://guangdong.chinatax.gov.cn/gdsw/zhhqsw_tpxw/2025-03/04/content_25146ed9ddcf4e15b534557faf6523e6.shtml" target="_blank">南方+：分线管理一周年，横琴变了（广东省税务局）</a>
+                        <span class="case-desc">2025年3月报道：一年来已有103家单位获免税主体资格，免保税货物进出口值2.6亿元，同比增长75.51%。铂华医学检验、大昌行供应链等企业已享受区内货物流转免税政策。</span>
+                    </li>
+                    <li>
+                        <a href="https://epaper.nfnews.com/nfdaily/html/202509/17/content_10148005.html" target="_blank">琴澳融合共筑桃源新梦（南方日报）</a>
+                        <span class="case-desc">2025年9月报道：107家企事业单位获得免税主体资格；今年以来合作区内海关备案企业进出口值超300亿元；"保税+"创新模式持续深化。</span>
+                    </li>
+                    <li>
+                        <a href="https://economy.caixin.com/2024-03-20/102177202.html" target="_blank">国办24条更大力度吸引外资（财新网）</a>
+                        <span class="case-desc">明确依托横琴粤澳深度合作区等重大合作平台，建立港澳企业数据跨境流动机制，探索建立跨境数据流动"白名单"制度。</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="summary-box">
+                <h3>🎯 在该区域开展算力业务的利好政策评估</h3>
+                <ul>
+                    <li><strong>进口成本最低梯队：</strong>与海南同属"三税直接全免"（非暂免），进口GPU服务器可节省约18%-25%综合税费，且无需后续按比例补税</li>
+                    <li><strong>琴澳市场独特通道：</strong>服务澳门及葡语国家市场（巴西、葡萄牙等）的算力需求，琴澳同城化带来客户便利性</li>
+                    <li><strong>数据跨境先行区：</strong>探索"白名单"制度，适合港澳金融、医疗、跨境电商等数据敏感型算力业务</li>
+                    <li><strong>加工增值灵活通道：</strong>区内完成服务器组装、系统部署后增值≥30%即可免关税进入内地，适合"前店后厂"模式</li>
+                    <li><strong>风险提示：</strong>免税主体资格需主动申请；放弃免税后36个月内不得再次申请；对美加征关税政策仍适用（需规避美国原产地设备）</li>
+                </ul>
+            </div>
+
+            <div class="policy-links">
+                <h3>政策原文链接</h3>
+                <ul class="link-list">
+                    <li>
+                        <span class="link-tag national">国家级</span>
+                        <div>
+                            <a href="http://gss.mof.gov.cn/gzdt/zhengcefabu/202401/t20240104_3925050.htm" target="_blank">财政部 海关总署 税务总局关于横琴粤澳深度合作区货物有关进出口税收政策的通知（财关税〔2024〕1号）</a>
+                            <span class="link-desc">明确合作区自用机器设备免征进口关税、进口环节增值税和消费税；加工增值30%免关税；分线管理税收规则</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="link-tag national">国家级</span>
+                        <div>
+                            <a href="https://economy.caixin.com/2024-01-05/102153453.html" target="_blank">横琴粤澳深度合作区封关在即 财政部等发布税收新策（财新网）</a>
+                            <span class="link-desc">解读财关税〔2024〕1号：6类主体进口自用机器设备免税；其他货物保税；加工增值30%免关税</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="link-tag official">地方政策</span>
+                        <div>
+                            <a href="https://www.hengqin.gov.cn/attachment/0/394/394658/3764402.pdf" target="_blank">深合區貨物稅收政策（横琴粤澳深度合作区法律事务局）</a>
+                            <span class="link-desc">官方PDF图解：5类自用货物免税、6类主体资格、加工增值计算公式、二线内销规则</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="link-tag official">地方政策</span>
+                        <div>
+                            <a href="https://www.hengqin.gov.cn/" target="_blank">横琴粤澳深度合作区执行委员会官网</a>
+                            <span class="link-desc">分线管理政策、免税主体申请指南、产业扶持政策发布平台</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchRegion(regionId, btnElement) {
+            document.querySelectorAll('.content-area').forEach(el => { el.classList.add('hidden'); });
+            document.getElementById(regionId).classList.remove('hidden');
+            document.querySelectorAll('.nav-tab').forEach(tab => { tab.classList.remove('active'); });
+            btnElement.classList.add('active');
+        }
+    </script>
+</body>
+</html>
